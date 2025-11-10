@@ -1,0 +1,15 @@
+<div>
+  <h1>Ajouter un match</h1>
+
+  <%= form_with model: @match, local: true do |form| %>
+
+    <div><%= form.collection_select :team_id_a, Team.all, :id, :name, prompt: "Sélectionne team A" %></div>
+    <div><%= form.collection_select :team_id_b, Team.all, :id, :name, prompt: "Sélectionne team B" %></div>
+
+    <p>
+      <%= form.submit "Ajouter" %>
+    </p>
+  <% end %>
+
+  <%= link_to "Voir tous les matchs", matches_path %>
+</div>

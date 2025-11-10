@@ -1,0 +1,9 @@
+<h1>Matchs</h1>
+
+<div>
+    <% @matches.each do |match| %>
+      <div><%= link_to "#{match.team_a.name} VS #{match.team_b.name}", match_path(match.id) %></div>
+    <% end %>
+</div>
+
+<%= link_to "Ajouter un match", new_match_path %>

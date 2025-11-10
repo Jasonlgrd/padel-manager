@@ -1,0 +1,12 @@
+<div>
+  <h1>Profile:</h1>
+  <div><%= @player.first_name %> <%= @player.last_name %></div>
+  <div>
+    <%= form_with model: @player do |form| %>
+      <%= form.file_field :avatar %>
+      <%= form.submit "Upload" %>
+    <% end %>
+
+    <%= image_tag @player.avatar.variant(resize_to_limit: [200, 200]) if @player.avatar.attached? %>
+  </div>
+</div>
