@@ -1,8 +1,8 @@
 class PlayersController < ApplicationController
   def index
     @players = [
-      Player.new({ name: "Nadal", ranking: 1 }),
-      Player.new({ name: "Djokovic", ranking: 2 })
+      Player.new({ first_name: "Rafael", last_name: "Nadal", ranking: 1 }),
+      Player.new({ first_name: "Novak", last_name: "Djokovic", ranking: 2 })
     ]
 
     UserMailer.with(player: @players.first).new_user_email.deliver_now
@@ -12,9 +12,9 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.new({ name: "Nadal", ranking: 1 })
+    @player = Player.new({ last_name: "Nadal", ranking: 1 })
 
-    puts @player.name
+    puts @player.last_name
     debugger
 
     UserMailer.with(player: @player).new_user_email.deliver_now

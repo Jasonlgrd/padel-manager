@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score: MyString
+  played_on: 2025-11-10 10:50:40
+
+two:
+  score: MyString
+  played_on: 2025-11-10 10:50:40
