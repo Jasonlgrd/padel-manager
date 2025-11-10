@@ -5,6 +5,11 @@ class Match < ApplicationRecord
   validates :score, presence: true
   validate :teams_must_be_different
 
+  def update_score!(score)
+    update(score:)
+    ActionCable.server.broadcast("score_#{id}", { score: score })
+  end
+  
   private
 
   def teams_must_be_different

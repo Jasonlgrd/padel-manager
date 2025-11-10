@@ -23,6 +23,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <a href="/players">Joueurs</a>
+      <a href="/teams">Teams</a>
+      <a href="/matchs">Matchs</a>
+    </nav>
+
+    <div class="content">
+      <%= yield %>
+    </div>
   </body>
 </html>

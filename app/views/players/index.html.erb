@@ -1,7 +1,9 @@
-<h1>Players</h1>
+<h1>Joueurs</h1>
 
 <ul>
     <% @players.each do |player| %>
-        <li><%= player.first_name %> <%= player.last_name %></li>
+        <li><%= link_to "#{player.first_name} #{player.last_name}", player_path(player.id) %></li>
     <% end %>
-<ul>
+</ul>
+
+<%= link_to "Ajouter un joueur", new_player_path %>

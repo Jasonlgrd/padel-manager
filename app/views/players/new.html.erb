@@ -1,0 +1,28 @@
+<div>
+  <h1>Ajouter un joueur</h1>
+
+  <%= form_with model: @player, local: true do |form| %>
+    <p>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name %>
+    </p>
+
+    <p>
+      <%= form.label :last_name %><br>
+      <%= form.text_field :last_name %>
+    </p>
+
+    <%= form.collection_select :team_id, Team.all, :id, :name, prompt: "Sélectionne une team" %>
+
+    <p>
+      <%= form.label :avatar %><br>
+      <%= form.file_field :avatar %>x
+    </p>
+
+    <p>
+      <%= form.submit "Ajouter" %>
+    </p>
+  <% end %>
+
+  <%= link_to "Voir tous les joueurs", players_path %>
+</div>
